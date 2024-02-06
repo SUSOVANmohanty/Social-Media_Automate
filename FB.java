@@ -61,7 +61,19 @@ public class FB {
 		je.executeScript("window.scrollBy(0,130)", "");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//span[@class='x1lliihq x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft'][normalize-space()='Add friend'])[5]")).click();
+		Thread.sleep(2000);
 		
+		String addfriend=driver.findElement(By.xpath("(//span[@class='x1lliihq x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft'][normalize-space()='Add friend'])[5]")).getText();
+		System.out.println(addfriend);
+		String expected="Cancel Request";
+		if(addfriend!=expected)
+		{
+			System.out.println("Friend request has been sent succefully");
+		}else {
+			System.out.println("Friend request not sent");
+		}
+		Thread.sleep(2000);
+		driver.quit();
 		
 		
 		
